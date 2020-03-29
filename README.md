@@ -1,3 +1,3 @@
 # My small python projects
 
-Here is my small project written in python
+Here is my small project written with python
