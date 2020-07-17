@@ -79,7 +79,7 @@ def app():
 
                 if q.lower() == "yes":
                     number /= number2
-                    number = flout(round(number))
+                    number = float(round(number))
 
                 else:
                     number /= number2
