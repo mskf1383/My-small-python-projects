@@ -5,7 +5,7 @@ Here is my small projects written with python:
 - 🧮 Divisiblity checker
 - 🎮 Dungeon game
 - 💀 Fack hacker
-- 🗜 Image compressor ⚡UPDATED
+- 🗜 Image compressor 📦"pillow" package need ⚡UPDATED
 - 🎮 Math game
 - 🎮 Number game
 - 🔑 Password creator
