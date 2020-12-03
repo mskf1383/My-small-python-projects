@@ -18,7 +18,6 @@ symbols_list = [
 characters_list = words_list + numbers_list + symbols_list
 
 def program():
-
     # Get the lenght of password
     try:
         lenght = int(input("Enter the lenght of password: "))
