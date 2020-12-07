@@ -1,4 +1,4 @@
-from PIL import Image
+from PIL import Image, UnidentifiedImageError
 import os
 
 
@@ -23,21 +23,20 @@ def app():
 	try:
 		# Get the image
 		file_old = input('Enter the image adress: ')
-		file_new = file_old.replace('.', '-new.')
+		file_new = file_old.replace('.', '-compressed.')
 		img = Image.open(file_old)
 
-		try:
-			# Save the compressed image
-			img.save(file_new, quality = 50, optimize = True)
-			input('Your image compressed successfully :)')
+		# Save the compressed image
+		img.save(file_new, quality=50, optimize=True)
+		input('Your image compressed successfully :)')
 
-		except:
-			# If unable to save compressed image
-			input('Failed to compress :(')
-
-	except:
-		# If unable to import image
+	# If unable to import image
+	except FileNotFoundError:
 		input('Failed to import image :(')
+
+	# If unable to save compressed image
+	except UnidentifiedImageError:
+		input('Failed to compress :(')
 
 	finally:
 		app() # Run the app again
