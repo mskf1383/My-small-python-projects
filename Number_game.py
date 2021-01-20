@@ -1,5 +1,6 @@
 """by MSKF"""
 
+from termcolor import colored
 
 def game():
     import random
@@ -14,24 +15,24 @@ def game():
             guess = int(input("Enter a number between 1 & 10: "))
 
         except ValueError:
-            print("Pleas enter a number")
+            print(colored("Pleas enter a number", "red"))
 
 
         # Check the number
         if guess == secret_num:
-            print("You win!!! My number is {}." .format(secret_num))
+            print(f"You win!!! My number is {secret_num}.")
             break
 
         elif guess < secret_num:
-            print("No!!! Come UP")
+            print(colored("No!!! Come UP", "red"))
             continue
 
         elif guess > secret_num:
-            print("No!!! Come DOWN")
+            print(colored("No!!! Come DOWN", "red"))
             continue
 
         else:
-            print("No!!! Try again.")
+            print(colored("No!!! Try again.", "red"))
             continue
 
 
