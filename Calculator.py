@@ -1,7 +1,10 @@
+from termcolor import colored
+
 """by MSKF"""
 
 
 # Help
+print(colored("Welcoem to Calculator !\n", "magenta"))
 print("Actions:")
 print("'+' for addition")
 print("'-' for subtraction")
@@ -15,23 +18,23 @@ def app():
     # Get the first number
     while True:
         try:
-            number = float(input("Enter a number: "))
+            number = float(input(colored("Enter a number: ", "yellow")))
             break
         
         # If the input undefind
         except ValueError:
-            print("** Enter a number **")
+            print(colored("** Enter a number **", "red"))
             continue
 
     
     # Get the action
     while True:
-        action = input("Enter the action (Enter 'DONE' to finish): ")
+        action = input(colored("Enter the action (Enter 'DONE' to finish): ", "white"))
 
 
         # Check the action
         if action.upper() == "DONE":
-            print("Resault: {}".format(number) , end="\n\n")
+            print(colored(f"Resault: {number}\n\n", "green"))
             app()
 
         elif action == "-":
@@ -47,19 +50,19 @@ def app():
             pass
 
         else:
-            print("** Your action isn't avalable **")
+            print(colored("** Your action isn't avalable **", "red"))
             continue
 
 
         # Get the second number
         while True:
             try:
-                number2 = float(input("Enter a number: "))
+                number2 = float(input(colored("Enter a number: ", "yellow")))
                 break
 
             # If the input undefind
             except ValueError:
-                print("** Enter a number **")
+                print(colored("** Enter a number **", "red"))
                 continue
 
 
@@ -75,9 +78,9 @@ def app():
 
         elif action == "/":
             if number % number2 != 0:
-                q = input("Do you like to round it? [yes/no] ")
+                q = input(colored("Do you like to round it? [Y]es , [N]o ", "white"))
 
-                if q.lower() == "yes":
+                if q.lower() == "Y":
                     number /= number2
                     number = float(round(number))
 
