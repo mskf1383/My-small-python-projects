@@ -1,6 +1,8 @@
 """by MSKF"""
 
+
 from termcolor import colored
+
 
 def game():
     import random

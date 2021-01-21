@@ -4,9 +4,11 @@
 from termcolor import colored
 import random, os
 
+
 # Clear the screen
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
+
 
 # Level
 level = 1
@@ -75,7 +77,7 @@ def game(score, level):
 
 
     # Check the answer
-    user_answer = input(" > ")
+    user_answer = input("> ")
     if user_answer.upper() == "UPGRADE":
             input(colored("Upgrade > ", "white"))
             score += 1000

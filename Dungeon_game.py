@@ -1,7 +1,9 @@
 """by MSKF"""
 
+
 from termcolor import colored
 import random, os
+
 
 # Draw grid
 CELLS = [

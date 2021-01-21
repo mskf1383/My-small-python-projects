@@ -1,3 +1,6 @@
+"""by MSKF"""
+
+
 from PIL import Image, UnidentifiedImageError
 import os
 

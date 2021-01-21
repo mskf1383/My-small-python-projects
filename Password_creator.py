@@ -1,8 +1,10 @@
 """by MSKF"""
 
+
 from random import choice
 from termcolor import colored
 from hashlib import md5
+
 
 # List of avalable words, numbers, symbols
 words_list = [
@@ -10,11 +12,13 @@ words_list = [
     'l', 'M', 'm', 'N', 'n', 'O', 'o', 'P', 'p', 'Q', 'q', 'R', 'r', 'S', 's', 'T', 't', 'U', 'u', 'V', 'v', 'W', 'w',
     'X', 'x', 'Y', 'y', 'Z', 'z'
 ]
+
 numbers_list = [
-    0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+    '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'
 ]
+
 symbols_list = [
-    '!', '@', '#', '$', '%', '^', '&', '*', '[', ']', '{', '}', '_', "|", "(", ")", "="
+    '!', '@', '#', '$', '%', '^', '&', '*', '[', ']', '{', '}', '_', '|', '(', ')', '='
 ]
 
 characters_list = words_list + numbers_list + symbols_list
@@ -37,7 +41,7 @@ def program():
         password += choice(characters_list)
         lenght -= 1
 
-    password = md5(password.encode("UTF-8")).hexdigest()
+    # password = md5(password.encode("UTF-8")).hexdigest()
 
     # Print the password
     print(password)

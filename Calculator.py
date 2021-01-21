@@ -1,6 +1,7 @@
-from termcolor import colored
-
 """by MSKF"""
+
+
+from termcolor import colored
 
 
 # Help
@@ -78,9 +79,9 @@ def app():
 
         elif action == "/":
             if number % number2 != 0:
-                q = input(colored("Do you like to round it? [Y]es , [N]o ", "white"))
+                q = input(colored("Do you like to round it? [Y/n] ", "white"))
 
-                if q.lower() == "Y":
+                if q.upper() == "Y":
                     number /= number2
                     number = float(round(number))
 
