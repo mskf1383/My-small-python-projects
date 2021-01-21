@@ -3,7 +3,6 @@
 
 from random import choice
 from termcolor import colored
-from hashlib import md5
 
 
 # List of avalable words, numbers, symbols
@@ -40,8 +39,6 @@ def program():
     while lenght:
         password += choice(characters_list)
         lenght -= 1
-
-    # password = md5(password.encode("UTF-8")).hexdigest()
 
     # Print the password
     print(password)
