@@ -1,8 +1,8 @@
 """by MSKF"""
 
 
-import random
-import os
+from termcolor import colored
+import random, os
 
 # Clear the screen
 def clear_screen():
@@ -25,16 +25,16 @@ def game(score, level):
     # levels
     if score >= level * 100:
         level += 1
-        print("You reach level {}!!!".format(level))
-        input("Continue> ")
+        print(colored(f"You reach level {level} !!!", "green"))
+        input("Continue > ")
         game(score, level)
 
 
     # Welcom message
-    print("Wellcome to the game.")
-    print("** Your are level {} **".format(level))
-    print("** Your score is {} **".format(score))
-    print("Answer the quetion:")
+    print(colored("Wellcome to the game.", "magenta"))
+    print(colored(f"** Your are level {level} **", "blue"))
+    print(colored(f"** Your score is {score} **\n", "blue"))
+    print(colored("Answer the quetion : ", "whtite"))
 
 
     # Numbers
@@ -49,10 +49,10 @@ def game(score, level):
 
     # The list of valid quetions
     quetion_list = [
-        "{} + {} + {}".format(x, y, z),
-        "{} - {} - {}".format(x, y, z),
-        "{} - {} + {}".format(x, y, z),
-        "{} + {} - {}".format(x, y, z),
+        f"{x} + {y} + {z}",
+        f"{x} - {y} - {z}",
+        f"{x} - {y} + {z}",
+        f"{x} + {y} - {z}"
     ]
 
 
@@ -75,33 +75,33 @@ def game(score, level):
 
 
     # Check the answer
-    user_answer = input("> ")
+    user_answer = input(" > ")
     if user_answer.upper() == "UPGRADE":
-            input("Upgrade> ")
+            input(colored("Upgrade > ", "white"))
             score += 1000
             game(score, level)
 
     try:
         if int(user_answer) == answer:
-            print("Exellent! Your answer is true.")
-            input("Next> ")
+            print(colored("Excellent ! Your answer is true.", "green"))
+            input("Next > ")
             score += 10
             game(score, level)
 
         if user_answer == "CHEAT":
-            print("Exellent! Your answer is true.")
-            input("Next> ")
+            print(colored("Excellent ! Your answer is true.", "green"))
+            input("Next > ")
             score += 10
             game(score, level)
 
         else:
-            print("Oh no! Your answer is false. \nTrue answer is {}".format(answer))
-            input("Next> ")
+            print(colored(f"Oh no! Your answer is false. \nTrue answer is {answer}", "red"))
+            input("Next > ")
             score -= 1
             game(score, level)
 
     except ValueError:
-        input("Enter a valid answer.")
+        input(colored("Enter a valid answer.", "red"))
         game(score, level)
 
 

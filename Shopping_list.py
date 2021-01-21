@@ -1,5 +1,6 @@
 """by MSKF"""
 
+from termcolor import colored
 
 # The list
 shopping_list = []
@@ -20,7 +21,7 @@ def show_list():
     num = 1
 
     for item in shopping_list:
-        print("{num}. {item}" .format(num = num, item = item))
+        print(f"{num}. {item}")
         num += 1
 
 
@@ -28,11 +29,12 @@ def show_list():
 def add_to_list(x):
 
     if shopping_list.count(x.lower()) != 0:
-        print("Its added before.")
+        print(colored(f"{x} added before.", "red"))
 
     else:
         shopping_list.append(x.lower())
-        print("{item} added to list.\n Your list has {num} items now.".format(item = x, num = len(shopping_list)))
+        num = len(shopping_list)
+        print(colored(f"{x} added to list.\n Your list has {num} items now.", "green"))
 
 
 # Remove an item to the list
@@ -41,10 +43,11 @@ def remove_from_list(z):
 
     if list(z) <= shopping_list:
         shopping_list.remove(z)
-        print("{item} removed from list.\n Your list has {num} items now.".format(item = z, num = len(shopping_list)))
+        num = len(shopping_list)
+        print(f"{z} removed from list.\n Your list has {num} items now.")
 
     else:
-        print("{item} isn\'t in your list!!!".format(item = z))
+        print(f"{z} isn\'t in your list!!!")
 
 
 # Program
